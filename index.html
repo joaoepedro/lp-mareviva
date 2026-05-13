@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Maré Viva — Hotéis e Pousadas no Litoral Brasileiro</title>
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header class="header">
+			<div class="container">
+				<a href="#" class="logo">Maré Viva</a>
+
+				<nav id="mainNav">
+					<ul>
+						<li><a href="#como-funciona">Como Funciona</a></li>
+						<li><a href="#destinos">Destinos</a></li>
+						<li><a href="#depoimentos">Depoimentos</a></li>
+						<li><a href="#contato">Contato</a></li>
+					</ul>
+					<a href="#contato" class="btn-header">Reservar Agora</a>
+				</nav>
+
+				<button
+					class="hamburger"
+					id="hamburger"
+					aria-label="Abrir menu"
+				>
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+		</header>
+
+		<main>
+			<section id="hero">
+				<div class="hero-container">
+					<div class="container">
+						<div class="hero-content">
+							<h1>
+								Seu próximo escape ao mar
+								<span>começa aqui.</span>
+							</h1>
+							<p>
+								Hotéis e pousadas selecionados nas melhores
+								cidades litorâneas do Brasil — reserve com
+								tranquilidade e viva momentos inesquecíveis.
+							</p>
+							<div class="hero-actions">
+								<a href="#destinos" class="btn-primary"
+									>Explorar destinos</a
+								>
+								<a href="#como-funciona" class="btn-outline">
+									Saiba como funciona
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="hero-image">
+						<img
+							src="hero.jpg"
+							alt="Praia ao pôr do sol no litoral brasileiro"
+						/>
+					</div>
+				</div>
+			</section>
+
+			<section id="numeros">
+				<div class="container">
+					<div class="numeros-grid">
+						<div class="numero-item">
+							<span class="numero">+200</span>
+							<p>Propriedades parceiras</p>
+						</div>
+						<div class="numero-item">
+							<span class="numero">15</span>
+							<p>Cidades litorâneas</p>
+						</div>
+						<div class="numero-item">
+							<span class="numero">+8.000</span>
+							<p>Hóspedes satisfeitos</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="como-funciona">
+				<div class="container">
+					<div class="section-header">
+						<h2>Como Funciona</h2>
+						<p>
+							Três passos simples para começar a sua próxima
+							viagem ao litoral.
+						</p>
+					</div>
+					<div class="passos-grid">
+						<div class="passo-item">
+							<div class="passo-icon">
+								<i data-lucide="map-pin"></i>
+							</div>
+							<span class="passo-numero">PASSO 01</span>
+							<h3>Escolha seu destino</h3>
+							<p>
+								Explore nossa seleção de hotéis e pousadas em
+								cidades litorâneas de Norte a Sul do Brasil.
+							</p>
+						</div>
+						<div class="passo-item">
+							<div class="passo-icon">
+								<i data-lucide="shield-check"></i>
+							</div>
+							<span class="passo-numero">PASSO 02</span>
+							<h3>Reserve com segurança</h3>
+							<p>
+								Pagamento protegido, cancelamento flexível e
+								suporte disponível durante toda a sua viagem.
+							</p>
+						</div>
+						<div class="passo-item">
+							<div class="passo-icon">
+								<i data-lucide="waves"></i>
+							</div>
+							<span class="passo-numero">PASSO 03</span>
+							<h3>Aproveite o litoral</h3>
+							<p>
+								Check-in descomplicado e experiência pensada
+								para você relaxar desde o primeiro momento.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="destinos">
+				<div class="container">
+					<div class="section-header">
+						<h2>Destinos em Destaque</h2>
+						<p>
+							Cidades litorâneas escolhidas pela curadoria Maré
+							Viva.
+						</p>
+					</div>
+				</div>
+
+				<div class="carrossel-wrapper">
+					<button
+						class="carrossel-btn prev"
+						id="prevBtn"
+						aria-label="Anterior"
+					>
+						<i data-lucide="chevron-left"></i>
+					</button>
+
+					<div class="carrossel-viewport">
+						<div class="carrossel-track" id="carrosselTrack">
+							<div class="destino-card">
+								<img
+									src="florianopolis.jpg"
+									alt="Florianópolis"
+								/>
+								<span class="destino-tag">
+									<i data-lucide="map-pin"></i>
+									Florianópolis, SC
+								</span>
+							</div>
+
+							<div class="destino-card">
+								<img src="buzios.jpg" alt="Búzios" />
+								<span class="destino-tag">
+									<i data-lucide="map-pin"></i>
+									Búzios, RJ
+								</span>
+							</div>
+
+							<div class="destino-card">
+								<img
+									src="porto-galinhas.jpg"
+									alt="Porto de Galinhas"
+								/>
+								<span class="destino-tag">
+									<i data-lucide="map-pin"></i>
+									Porto de Galinhas, PE
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<button
+						class="carrossel-btn next"
+						id="nextBtn"
+						aria-label="Próximo"
+					>
+						<i data-lucide="chevron-right"></i>
+					</button>
+				</div>
+
+				<div class="carrossel-dots" id="carrosselDots"></div>
+			</section>
+
+			<section id="depoimentos"></section>
+
+			<section id="contato"></section>
+		</main>
+
+		<footer></footer>
+
+		<!-- Lucide Icons -->
+		<script src="https://unpkg.com/lucide@latest"></script>
+		<script>
+			lucide.createIcons();
+		</script>
+		<script src="script.js"></script>
+	</body>
+</html>

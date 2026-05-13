@@ -1,0 +1,599 @@
+/* =========================================
+   DESIGN SYSTEM — Variáveis globais
+   ========================================= */
+:root {
+    /* Cores */
+    --c-base: #1B3A4B;
+    --c-base-dark: #0F2535;
+    --c-secondary: #2D6A7F;
+    --c-bg: #F5F0E8;
+    --c-bg-alt: #E8DCC8;
+    --c-cta: #C4873A;
+    --c-cta-hover: #a8722e;
+    --c-white: #ffffff;
+    --c-light: #d9e4ea;
+    --c-whatsapp: #25D366;
+
+    /* Tipografia */
+    --f-title: 'Plus Jakarta Sans', sans-serif;
+    --f-body: 'Inter', sans-serif;
+
+    /* Espaçamentos */
+    --s-1: 0.5rem;
+    --s-2: 1rem;
+    --s-3: 1.5rem;
+    --s-4: 2rem;
+    --s-5: 3rem;
+    --s-6: 5rem;
+
+    /* Layout */
+    --radius: 14px;
+    --container: 1200px;
+}
+
+/* =========================================
+   RESET / BASE
+   ========================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--f-body);
+    background: var(--c-bg);
+    color: var(--c-base);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--f-title);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--c-base);
+}
+
+/* =========================================
+   CONTAINER
+   ========================================= */
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--s-3);
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: transparent;
+    transition: background 0.4s ease, border-color 0.4s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.header.scrolled {
+    background: rgba(245, 240, 232, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(27, 58, 75, 0.08);
+}
+
+.header .container {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    font-family: var(--f-title);
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--c-base);
+}
+
+/* Nav */
+.header nav {
+    display: flex;
+    align-items: center;
+    gap: var(--s-4);
+}
+
+.header nav ul {
+    display: flex;
+    gap: var(--s-3);
+}
+
+.header nav ul a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--c-base);
+    transition: color 0.2s;
+}
+
+.header nav ul a:hover {
+    color: var(--c-cta);
+}
+
+/* Botão header */
+.btn-header {
+    background: var(--c-cta);
+    color: var(--c-white);
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn-header:hover {
+    background: var(--c-cta-hover);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   HAMBURGER
+   ========================================= */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--c-base);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* =========================================
+   HERO
+   ========================================= */
+.hero-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url('hero.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-top: 72px;
+    width: 100%;
+}
+
+.hero-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+            #F5F0E8 40%,
+            rgba(245, 240, 232, 0.85) 60%,
+            transparent 100%);
+    z-index: 1;
+}
+
+.hero-container .container {
+    width: 100%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 580px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    color: var(--c-base);
+    margin-bottom: var(--s-3);
+}
+
+.hero-content h1 span {
+    color: var(--c-cta);
+}
+
+.hero-content p {
+    color: var(--c-secondary);
+    font-size: 1.1rem;
+    margin-bottom: var(--s-4);
+    max-width: 520px;
+}
+
+.hero-image {
+    display: none;
+}
+
+.hero-actions {
+    display: flex;
+    gap: var(--s-2);
+    flex-wrap: wrap;
+}
+
+/* =========================================
+   BOTÕES HERO SECTION
+   ========================================= */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    background: var(--c-cta);
+    color: var(--c-white);
+    padding: 0.85rem 1.6rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background: var(--c-cta-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    color: var(--c-base);
+    padding: 0.85rem 1.6rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 2px solid var(--c-base);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn-outline:hover {
+    background: var(--c-base);
+    color: var(--c-white);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   NÚMEROS
+   ========================================= */
+#numeros {
+    padding: var(--s-5) 0;
+    background: var(--c-base);
+}
+
+.numeros-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.numero-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.numero {
+    font-family: var(--f-title);
+    font-size: clamp(2.2rem, 4.0vw, 3.2rem);
+    font-weight: 700;
+    color: var(--c-cta);
+}
+
+.numero-item p {
+    font-size: 1rem;
+    color: var(--c-light);
+}
+
+/* =========================================
+   HEADER SECTION
+   ========================================= */
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--s-2);
+    margin-bottom: var(--s-5);
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--c-base);
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--c-secondary);
+    max-width: 600px;
+}
+
+/* =========================================
+   COMO FUNCIONA
+   ========================================= */
+
+#como-funciona {
+    padding: var(--s-5) 0;
+}
+
+.passos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-4);
+}
+
+.passo-item {
+    background: var(--c-white);
+    padding: var(--s-4);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-1);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.passo-item:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+}
+
+.passo-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--c-bg-alt);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--c-cta);
+    margin-bottom: var(--s-1);
+}
+
+.passo-icon i {
+    width: 24px;
+    height: 24px;
+}
+
+.passo-numero {
+    font-family: var(--f-title);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--c-cta);
+    text-transform: uppercase;
+}
+
+/* =========================================
+   DESTINOS
+   ========================================= */
+#destinos {
+    padding: var(--s-6) 0;
+    background: var(--c-bg-alt);
+}
+
+.carrossel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--s-3);
+}
+
+.carrossel-viewport {
+    flex: 1;
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+
+.carrossel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.destino-card {
+    min-width: 100%;
+    position: relative;
+}
+
+.destino-card img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius);
+}
+
+.destino-tag {
+    position: absolute;
+    bottom: var(--s-2);
+    right: var(--s-2);
+    background: var(--c-cta);
+    color: var(--c-white);
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    z-index: 2;
+}
+
+.destino-tag i {
+    width: 16px;
+    height: 16px;
+}
+
+.carrossel-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--c-white);
+    color: var(--c-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    flex-shrink: 0;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.carrossel-btn:hover {
+    background: var(--c-cta);
+    color: var(--c-white);
+    transform: scale(1.08);
+}
+
+.carrossel-btn i {
+    width: 22px;
+    height: 22px;
+}
+
+.carrossel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: var(--s-4);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(27, 58, 75, 0.25);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, width 0.3s;
+}
+
+.dot.active {
+    background: var(--c-cta);
+    width: 28px;
+    border-radius: 5px;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+@media (max-width: 768px) {
+    .header .container {
+        justify-content: center;
+    }
+
+    .logo {
+        flex: 1;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: var(--s-3);
+    }
+
+    #mainNav {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--c-bg);
+        flex-direction: column;
+        padding: var(--s-3);
+        gap: var(--s-2);
+        border-bottom: 1px solid rgba(27, 58, 75, 0.08);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        /* transição */
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: none;
+    }
+
+    #mainNav.open {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+    }
+
+    #mainNav ul {
+        flex-direction: column;
+        gap: var(--s-2);
+    }
+
+    .btn-header {
+        width: 100%;
+        text-align: center;
+    }
+
+    .numeros-grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--s-4);
+    }
+
+    .passos-grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--s-4);
+    }
+
+    .carrossel-btn {
+        display: none;
+    }
+
+    .destino-card img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .carrossel-wrapper {
+        padding: 0 var(--s-2);
+        padding-bottom: 28px;
+    }
+}
